@@ -63,11 +63,14 @@ class BookRoutesTestCase(unittest.TestCase):
             "genre": "Fiction",
             "year_published": 1960
         }
+        
         self.client.post('/books', json=book_data)
         response = self.client.get('/books/title?title=To Kill a Mockingbird')
         data = json.loads(response.data)
+
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(data['title'], "To Kill a Mockingbird")
+        self.assertGreater(len(data), 0)
+        self.assertEqual(data[0]['title'], "To Kill a Mockingbird")
 
     # Test getting a book by title (non-existent title)
     def test_get_non_existent_book(self):
