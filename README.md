@@ -15,8 +15,8 @@ git clone https://github.com/yourusername/library-management-system.git
 
 Create a virtual environment and Activate the virtual environment On Windows:
 ```bash
-   python3 -m venv venv
-   .\venv\Scripts\activate
+python3 -m venv venv
+.\venv\Scripts\activate
 ```
 On macOS/Linux:
 ```bash
@@ -39,3 +39,4 @@ This will start the server at http://127.0.0.1:5000/ by default. You can use Pos
 ```bash
    python -m unittest discover tests
 ```
+
